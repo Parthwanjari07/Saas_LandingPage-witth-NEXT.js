@@ -29,32 +29,32 @@ export default function Features() {
                 {/* Features Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:max-w-2xl lg:max-w-none mx-auto">
                     {/* First feature */}
-                    <FeatureCard 
+                    <FeatureCard
                         image={
                             <div className="flex -space-x-3">
                                 <div className="w-20 h-20 rounded-full p-[3px] bg-blue-500">
                                     <div className="w-full h-full rounded-full border-2 border-zinc-900">
-                                        <Image 
-                                            src={avatar1} 
-                                            alt="Avatar" 
+                                        <Image
+                                            src={avatar1}
+                                            alt="Avatar"
                                             className="w-full h-full rounded-full object-cover ring-2 ring-zinc-900"
                                         />
                                     </div>
                                 </div>
                                 <div className="w-20 h-20 rounded-full p-[3px] bg-purple-500">
                                     <div className="w-full h-full rounded-full border-2 border-zinc-900">
-                                        <Image 
-                                            src={avatar2} 
-                                            alt="Avatar" 
+                                        <Image
+                                            src={avatar2}
+                                            alt="Avatar"
                                             className="w-full h-full rounded-full object-cover ring-2 ring-zinc-900"
                                         />
                                     </div>
                                 </div>
                                 <div className="w-20 h-20 rounded-full p-[3px] bg-orange-500">
                                     <div className="w-full h-full rounded-full border-2 border-zinc-900">
-                                        <Image 
-                                            src={avatar3} 
-                                            alt="Avatar" 
+                                        <Image
+                                            src={avatar3}
+                                            alt="Avatar"
                                             className="w-full h-full rounded-full object-cover ring-2 ring-zinc-900"
                                         />
                                     </div>
@@ -70,13 +70,19 @@ export default function Features() {
                         description="Work together seamlessly with conflict-free team editing"
                     />
                     {/* Second feature */}
-                    <FeatureCard    
+                    <FeatureCard
                         image={
                             <div className="font-bold text-4xl text-center">
-                                <div className="text-zinc-600  ">We&apos;ve achieved</div>
-                                <span className="block bg-gradient-to-r from-violet-500 to-pink-500 text-transparent bg-clip-text">incredible</span>
-                                <span className="text-zinc-600 block "> growth this year</span>
-                                 
+                                <div className="text-zinc-600  ">
+                                    We&apos;ve achieved
+                                </div>
+                                <span className="block bg-gradient-to-r from-violet-500 to-pink-500 text-transparent bg-clip-text">
+                                    incredible
+                                </span>
+                                <span className="text-zinc-600 block ">
+                                    {" "}
+                                    growth this year
+                                </span>
                             </div>
                         }
                         title="Interactive Prototyping"
@@ -84,12 +90,18 @@ export default function Features() {
                     />
                     {/* Third feature - centered in tablet view */}
                     <div className="md:col-start-1 md:col-end-3 lg:col-auto md:w-1/2 md:mx-auto lg:w-full">
-                        <FeatureCard 
+                        <FeatureCard
                             image={
                                 <div className="flex gap-2 ">
-                                    <div className="bg-white/90 rounded-xl  px-7 py-3 text-2xl text-black font-medium">shift</div>
-                                    <div className="bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium">alt</div>
-                                    <div className="bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium">C</div>
+                                    <div className="bg-white/90 rounded-xl  px-7 py-3 text-2xl text-black font-medium">
+                                        shift
+                                    </div>
+                                    <div className="bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium">
+                                        alt
+                                    </div>
+                                    <div className="bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium">
+                                        C
+                                    </div>
                                 </div>
                             }
                             title="Keyboard Quick Actions"
@@ -101,7 +113,10 @@ export default function Features() {
                 {/* Features List */}
                 <div className="flex flex-wrap justify-center gap-3 mt-12">
                     {features.map((feature) => (
-                        <div key={feature} className="flex items-center gap-2 border border-white/15 bg-zinc-900/90 rounded-full px-4 py-2 text-md">
+                        <div
+                            key={feature}
+                            className="flex items-center gap-2 border border-white/15 bg-zinc-900/90 rounded-full px-4 py-2 text-md"
+                        >
                             <div className="w-2 h-2 rounded-full bg-lime-500"></div>
                             <span className="text-white">{feature}</span>
                         </div>

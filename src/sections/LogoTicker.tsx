@@ -20,20 +20,24 @@ const logos = [
 ];
 
 export default function LogoTicker() {
-    return <section className="container">
-        <h3 className="text-center text-xl font-medium text-white/50 mt-10 mb-5">Already chosen by these market leaders</h3>
-        <div className="overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <div className="flex gap-24 mb-20">
-                {logos.map((logo) => (
-                    <div key={logo.name} className="flex-shrink-0">
-                        <Image 
-                            src={logo.image} 
-                            alt={logo.name} 
-                            className="h-8 w-auto"
-                        />
-                    </div>
-                ))}
+    return (
+        <section className="container">
+            <h3 className="text-center text-xl font-medium text-white/50 mt-10 mb-5">
+                Already chosen by these market leaders
+            </h3>
+            <div className="overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <div className="flex gap-24 mb-20">
+                    {logos.map((logo) => (
+                        <div key={logo.name} className="flex-shrink-0">
+                            <Image
+                                src={logo.image}
+                                alt={logo.name}
+                                className="h-8 w-auto"
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>;
+        </section>
+    );
 }
