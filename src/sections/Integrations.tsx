@@ -43,28 +43,43 @@ const integrations = [
 export default function Integrations() {
     return (
         <section>
-            <div className="container">
-                <div className="flex items-center justify-center">
-                    <Tag title="INTEGRATIONS" className="text-md" />
+            <div className="container grid grid-cols-1 lg:grid-cols-2 ">
+                <div className="flex flex-col justify-center items-center lg:pr-24 lg:pb-24">
+                    <div className="flex items-center justify-center">
+                        <Tag title="INTEGRATIONS" className="text-md" />
+                    </div>
+                    <h2 className="text-6xl font-medium text-white">
+                        Goes well with <span className="text-lime-400">others</span>
+                    </h2>
+                    <p className="text-zinc-500 text-xl font-medium leading-relaxed mt-4">
+                        Layers is a no-code website builder and design system.
+                        It&apos;s a powerful tool that allows you to create
+                        beautiful websites without having to code.
+                    </p>
                 </div>
-                <h2 className="text-6xl font-medium text-white">
-                    Goes well with <span className="text-lime-400">others</span>
-                </h2>
-                <p className="text-zinc-500 text-xl font-medium leading-relaxed mt-4">
-                    Layers is a no-code website builder and design system.
-                    It&apos;s a powerful tool that allows you to create
-                    beautiful websites without having to code.
-                </p>
-                <div className="mt-12 mb-32 overflow-hidden h-[400px] [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
-                    <div className="grid gap-4 ">
-                        {integrations.map((integration) => (
-                            <IntegrationCard
-                                key={integration.name}
-                                name={integration.name}
-                                icon={integration.icon}
-                                description={integration.description}
-                            />
-                        ))}
+                <div className="mt-12 mb-32 overflow-hidden h-[400px] lg:h-[800px] [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+                    <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                        <div className="space-y-4">
+                            {integrations.map((integration) => (
+                                <IntegrationCard
+                                    key={integration.name}
+                                    name={integration.name}
+                                    icon={integration.icon}
+                                    description={integration.description}
+                                />
+                            ))}
+                        </div>
+                        
+                        <div className="space-y-4">
+                            {integrations.slice().reverse().map((integration) => (
+                                <IntegrationCard
+                                    key={integration.name}
+                                    name={integration.name}
+                                    icon={integration.icon}
+                                    description={integration.description}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

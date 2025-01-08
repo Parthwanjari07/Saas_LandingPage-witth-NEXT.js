@@ -21,9 +21,11 @@ export default function Features() {
             <div>
                 <div className="text-center">
                     <Tag title="FEATURES" />
-                    <div className="text-6xl md:text-7xl lg:text-8xl mb-16 ">
+                    <div className="text-6xl  mb-16 ">
                         <span className="text-white">Where power meets </span>
-                        <span className="text-lime-500">simplicity</span>
+                        <span className="text-lime-500 block">
+                            simplicity
+                        </span>
                     </div>
                 </div>
                 {/* Features Grid */}
@@ -111,13 +113,22 @@ export default function Features() {
                 </div>
 
                 {/* Features List */}
-                <div className="flex flex-wrap justify-center gap-3 mt-12">
+                <div className="flex flex-wrap justify-center gap-3 mt-12 py-12 ">
                     {features.map((feature) => (
                         <div
                             key={feature}
-                            className="flex items-center gap-2 border border-white/15 bg-zinc-900/90 rounded-full px-4 py-2 text-md"
+                            className="flex items-center gap-2 border border-white/15 bg-zinc-900/90 rounded-xl px-4 py-2 text-md lg:text-lg lg:px-6 lg:py-3 lg:gap:3"
                         >
-                            <div className="w-2 h-2 rounded-full bg-lime-500"></div>
+                            <svg
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                className="w-3 h-3"
+                            >
+                                <path
+                                    d="M8 0L10.2047 5.79754L16 8L10.2047 10.2025L8 16L5.79533 10.2025L0 8L5.79533 5.79754L8 0Z"
+                                    fill="#84cc16"
+                                />
+                            </svg>
                             <span className="text-white">{feature}</span>
                         </div>
                     ))}
