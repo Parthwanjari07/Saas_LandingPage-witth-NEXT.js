@@ -49,7 +49,8 @@ export default function Integrations() {
                         <Tag title="INTEGRATIONS" className="text-md" />
                     </div>
                     <h2 className="text-6xl font-medium text-white">
-                        Goes well with <span className="text-lime-400">others</span>
+                        Goes well with{" "}
+                        <span className="text-lime-400">others</span>
                     </h2>
                     <p className="text-zinc-500 text-xl font-medium leading-relaxed mt-4">
                         Layers is a no-code website builder and design system.
@@ -69,16 +70,19 @@ export default function Integrations() {
                                 />
                             ))}
                         </div>
-                        
+
                         <div className="space-y-4">
-                            {integrations.slice().reverse().map((integration) => (
-                                <IntegrationCard
-                                    key={integration.name}
-                                    name={integration.name}
-                                    icon={integration.icon}
-                                    description={integration.description}
-                                />
-                            ))}
+                            {integrations
+                                .slice()
+                                .reverse()
+                                .map((integration) => (
+                                    <IntegrationCard
+                                        key={integration.name}
+                                        name={integration.name}
+                                        icon={integration.icon}
+                                        description={integration.description}
+                                    />
+                                ))}
                         </div>
                     </div>
                 </div>

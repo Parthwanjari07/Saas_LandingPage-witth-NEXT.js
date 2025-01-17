@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Tag from "@/components/Tag";
 import FaqCard from "@/components/FaqCard";
@@ -29,7 +29,7 @@ const faqs = [
 
 export default function Faqs() {
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-    
+
     const toggleFaq = (index: number) => {
         setSelectedIndex(selectedIndex === index ? null : index);
     };
@@ -40,14 +40,15 @@ export default function Faqs() {
                 <div className="flex flex-col justify-center items-center">
                     <Tag title="FAQS" className="text-md" />
                     <h2 className="text-6xl font-medium text-white text-center mb-16">
-                        Frequently asked <span className="text-lime-400">questions</span>
+                        Frequently asked{" "}
+                        <span className="text-lime-400">questions</span>
                     </h2>
                     <div className="flex flex-col gap-4 w-full max-w-3xl">
                         {faqs.map((faq, faqIndex) => (
-                            <FaqCard 
-                                key={faq.question} 
-                                question={faq.question} 
-                                answer={faq.answer} 
+                            <FaqCard
+                                key={faq.question}
+                                question={faq.question}
+                                answer={faq.answer}
                                 selected={faqIndex === selectedIndex}
                                 onClick={() => toggleFaq(faqIndex)}
                             />

@@ -3,6 +3,7 @@ import FeatureCard from "@/components/Feature_card";
 import avatar1 from "@/assets/images/avatar-ashwin-santiago.jpg";
 import avatar2 from "@/assets/images/avatar-florence-shaw.jpg";
 import avatar3 from "@/assets/images/avatar-lula-meyers.jpg";
+import avatar4 from "@/assets/images/avatar-owen-garcia.jpg";
 import Image from "next/image";
 
 const features = [
@@ -23,22 +24,21 @@ export default function Features() {
                     <Tag title="FEATURES" />
                     <div className="text-6xl  mb-16 ">
                         <span className="text-white">Where power meets </span>
-                        <span className="text-lime-500 block">
-                            simplicity
-                        </span>
+                        <span className="text-lime-500 block">simplicity</span>
                     </div>
                 </div>
                 {/* Features Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:max-w-2xl lg:max-w-none mx-auto">
                     {/* First feature */}
                     <FeatureCard
+                        className="group"
                         image={
                             <div className="flex -space-x-3">
                                 <div className="w-20 h-20 rounded-full p-[3px] bg-blue-500">
                                     <div className="w-full h-full rounded-full border-2 border-zinc-900">
                                         <Image
                                             src={avatar1}
-                                            alt="Avatar"
+                                            alt="Avatar1"
                                             className="w-full h-full rounded-full object-cover ring-2 ring-zinc-900"
                                         />
                                     </div>
@@ -47,7 +47,7 @@ export default function Features() {
                                     <div className="w-full h-full rounded-full border-2 border-zinc-900">
                                         <Image
                                             src={avatar2}
-                                            alt="Avatar"
+                                            alt="Avatar2"
                                             className="w-full h-full rounded-full object-cover ring-2 ring-zinc-900"
                                         />
                                     </div>
@@ -56,16 +56,21 @@ export default function Features() {
                                     <div className="w-full h-full rounded-full border-2 border-zinc-900">
                                         <Image
                                             src={avatar3}
-                                            alt="Avatar"
+                                            alt="Avatar3"
                                             className="w-full h-full rounded-full object-cover ring-2 ring-zinc-900"
                                         />
                                     </div>
                                 </div>
-                                <div className="w-20 h-20 rounded-full p-[3px] bg-zinc-700 flex items-center justify-center text-base text-zinc-400">
-                                    <div className="w-full h-full rounded-full border-2 border-zinc-900 flex items-center justify-center">
-                                        ...
+                                <div className="w-20 h-20 rounded-full p-[3px] bg-zinc-700 group-hover:bg-green-500 transition">
+                                    <div className="w-full h-full rounded-full border-2 border-zinc-900 flex items-center justify-center text-zinc-400 ">
+                                        <Image
+                                            src={avatar4}
+                                            alt="Avatar4"
+                                            className="absolute rounded-full opacity-0 group-hover:opacity-100 group-hover:ring-2 group-hover:ring-green-500 transition "
+                                        />
+                                        ... 
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                         }
                         title="Real-time Collaboration"
@@ -79,7 +84,8 @@ export default function Features() {
                                     We&apos;ve achieved
                                 </div>
                                 <span className="block bg-gradient-to-r from-violet-500 to-pink-500 text-transparent bg-clip-text">
-                                    incredible
+                                    <span>incredible</span>
+                                    <video src="@/assets/videos/gif-incredible.mp4" autoPlay loop muted playsInline className="absolute bottom-full "></video>
                                 </span>
                                 <span className="text-zinc-600 block ">
                                     {" "}
