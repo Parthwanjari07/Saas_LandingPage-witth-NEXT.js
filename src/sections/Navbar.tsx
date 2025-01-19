@@ -5,10 +5,10 @@ import logoImage from "@/assets/images/logo.svg";
 import Button from "@/components/Button";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, animate } from "framer-motion";
 
 const navLinks = [
-    { label: "Home", href: "#" },
+    { label: "Home", href: "#hero" },
     { label: "Features", href: "#features" },
     { label: "Integrations", href: "#integrations" },
     { label: "FAQs", href: "#faqs" },
@@ -16,6 +16,26 @@ const navLinks = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        setIsOpen(false); // Close mobile menu if open
+        
+        const element = document.querySelector(href);
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - 100; // Using scrollY instead
+
+            animate(window.scrollY, offsetPosition, {
+                duration: 0.8,
+                ease: [0.32, 0.72, 0, 1], // Custom easing
+                onUpdate: (value) => {
+                    window.scrollTo(0, value);
+                }
+            });
+        }
+    };
+
     return (
         <>
             <section className="pt-4 fixed top-0 z-50 w-full">
@@ -32,7 +52,11 @@ export default function Navbar() {
                             <div className="lg:flex justify-center items-center hidden">
                                 <nav className="flex items-center gap-6">
                                     {navLinks.map((link) => (
-                                        <a key={link.href} href={link.href}>
+                                        <a 
+                                            key={link.href} 
+                                            href={link.href}
+                                            onClick={(e) => handleNavClick(e, link.href)}
+                                        >
                                             {link.label}
                                         </a>
                                     ))}
@@ -106,7 +130,7 @@ export default function Navbar() {
                         <AnimatePresence>
                             {isOpen && (
                                 <motion.div
-                                    className="flex flex-col items-center gap-4 mb-2 overflow-hidden "
+                                    className="flex flex-col items-center gap-4 mb-2 overflow-hidden"
                                     initial={{ height: 0 }}
                                     animate={{ height: "auto" }}
                                     exit={{ height: 0 }}
@@ -117,6 +141,7 @@ export default function Navbar() {
                                             key={link.href}
                                             href={link.href}
                                             className="py-1 px-4"
+                                            onClick={(e) => handleNavClick(e, link.href)}
                                         >
                                             {link.label}
                                         </a>

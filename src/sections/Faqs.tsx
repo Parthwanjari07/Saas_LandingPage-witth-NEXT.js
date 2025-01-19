@@ -35,7 +35,7 @@ export default function Faqs() {
     };
 
     return (
-        <section className="py-24">
+        <section id="faqs" className="py-24">
             <div className="container">
                 <div className="flex flex-col justify-center items-center">
                     <Tag title="FAQS" className="text-md" />

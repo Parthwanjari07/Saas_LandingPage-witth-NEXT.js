@@ -61,7 +61,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section
+        <section id="hero"
             className="py-24 overflow-x-clip"
             style={{ cursor: `url(${cursoryou.src}), auto` }}
         >

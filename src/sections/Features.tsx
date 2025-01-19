@@ -18,7 +18,7 @@ const features = [
 
 export default function Features() {
     return (
-        <section className="container px-6 py-24">
+        <section id="features" className="container px-6 py-24">
             <div>
                 <div className="text-center">
                     <Tag title="FEATURES" />
@@ -62,13 +62,13 @@ export default function Features() {
                                     </div>
                                 </div>
                                 <div className="w-20 h-20 rounded-full p-[3px] bg-zinc-700 group-hover:bg-green-500 transition">
-                                    <div className="w-full h-full rounded-full border-2 border-zinc-900 flex items-center justify-center text-zinc-400 ">
+                                    <div className="w-full h-full rounded-full border-2 border-zinc-900 flex items-center justify-center relative">
                                         <Image
                                             src={avatar4}
                                             alt="Avatar4"
-                                            className="absolute rounded-full opacity-0 group-hover:opacity-100 group-hover:ring-2 group-hover:ring-green-500 transition "
+                                            className="absolute inset-0 w-full h-full rounded-full object-cover opacity-0 group-hover:opacity-100 group-hover:ring-2 group-hover:ring-zinc-900 transition"
                                         />
-                                        ... 
+                                        <span className="text-zinc-400 group-hover:opacity-0 transition">...</span>
                                     </div>
                                 </div> 
                             </div>
@@ -78,16 +78,24 @@ export default function Features() {
                     />
                     {/* Second feature */}
                     <FeatureCard
+                        className="group"
                         image={
                             <div className="font-bold text-4xl text-center">
-                                <div className="text-zinc-600  ">
+                                <div className="text-white/20 group-hover:text-white/10 transition duration-500 ">
                                     We&apos;ve achieved
                                 </div>
-                                <span className="block bg-gradient-to-r from-violet-500 to-pink-500 text-transparent bg-clip-text">
+                                <span className="relative block bg-gradient-to-r from-violet-500 to-pink-500 text-transparent bg-clip-text">
                                     <span>incredible</span>
-                                    <video src="@/assets/videos/gif-incredible.mp4" autoPlay loop muted playsInline className="absolute bottom-full "></video>
+                                    <video 
+                                        src="/gif-incredible.mp4" 
+                                        autoPlay 
+                                        loop 
+                                        muted 
+                                        playsInline 
+                                        className="absolute bottom-full left-1/2 -translate-x-1/2 rounded-2xl shadow-xl w-40 h-auto opacity-0 group-hover:opacity-100 transition duration-500"
+                                    />
                                 </span>
-                                <span className="text-zinc-600 block ">
+                                <span className="text-white/20 group-hover:text-white/10 transition duration-500 block ">
                                     {" "}
                                     growth this year
                                 </span>
@@ -99,15 +107,16 @@ export default function Features() {
                     {/* Third feature - centered in tablet view */}
                     <div className="md:col-start-1 md:col-end-3 lg:col-auto md:w-1/2 md:mx-auto lg:w-full">
                         <FeatureCard
+                            className="group"
                             image={
-                                <div className="flex gap-2 ">
-                                    <div className="bg-white/90 rounded-xl  px-7 py-3 text-2xl text-black font-medium">
+                                <div className="flex gap-6 ">
+                                        <div className="outline outline-2 outline-offset-4 outline-transparent bg-white/90 rounded-xl px-7 py-3 text-2xl text-black font-medium group-hover:outline-lime-400 transition-all duration-300 group-hover:translate-y-1  ">
                                         shift
                                     </div>
-                                    <div className="bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium">
+                                    <div className="outline outline-2 outline-offset-4 outline-transparent bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium group-hover:outline-lime-400 transition-all duration-300 group-hover:translate-y-1  delay-150">
                                         alt
                                     </div>
-                                    <div className="bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium">
+                                    <div className="outline outline-2 outline-offset-4 outline-transparent bg-white/90 rounded-xl px-5 py-3 text-2xl text-black font-medium group-hover:outline-lime-400 transition-all duration-300 group-hover:translate-y-1 delay-300 ">
                                         C
                                     </div>
                                 </div>
@@ -119,16 +128,16 @@ export default function Features() {
                 </div>
 
                 {/* Features List */}
-                <div className="flex flex-wrap justify-center gap-3 mt-12 py-12 ">
+                <div className="flex flex-wrap justify-center gap-3 mt-12 py-12  ">
                     {features.map((feature) => (
                         <div
                             key={feature}
-                            className="flex items-center gap-2 border border-white/15 bg-zinc-900/90 rounded-xl px-4 py-2 text-md lg:text-lg lg:px-6 lg:py-3 lg:gap:3"
+                            className=" group flex items-center gap-2 border border-white/15 bg-zinc-900/90 rounded-full px-4 py-2 text-md lg:text-lg lg:px-6 lg:py-3 lg:gap:3 hover:scale-105 transition-all duration-300"
                         >
                             <svg
                                 viewBox="0 0 16 16"
                                 fill="none"
-                                className="w-3 h-3"
+                                className="w-3 h-3 group-hover:rotate-45 transition-all duration-500 group-hover:bg-lime-400"
                             >
                                 <path
                                     d="M8 0L10.2047 5.79754L16 8L10.2047 10.2025L8 16L5.79533 10.2025L0 8L5.79533 5.79754L8 0Z"

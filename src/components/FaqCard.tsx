@@ -1,3 +1,7 @@
+import { AnimatePresence } from "framer-motion";
+
+import { motion } from "framer-motion";
+
 export default function FaqCard({
     question,
     answer,
@@ -29,7 +33,7 @@ export default function FaqCard({
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        className={`feather feather-plus text-lime-400 flex-shrink-0 transition-transform ${
+                        className={`feather feather-plus text-lime-400 flex-shrink-0 transition duration-300 ${
                             selected ? "rotate-45" : ""
                         }`}
                     >
@@ -38,11 +42,21 @@ export default function FaqCard({
                     </svg>
                 </div>
                 <div>
-                    <p
-                        className={`text-white/50 text-lg font-medium leading-relaxed mt-4 ${selected ? "block" : "hidden"}`}
-                    >
-                        {answer}
-                    </p>
+                    <AnimatePresence>
+                        {selected && (
+                            <motion.p
+                                initial={{ height: 0, marginTop: 0 }}
+                                animate={{
+                                    height: "auto",
+                                    marginTop: "1rem",
+                                }}
+                                exit={{ height: 0, marginTop: 0 }}
+                                className={`text-white/50 text-lg font-medium leading-relaxed mt-4 overflow-hidden`}
+                            >
+                                {answer}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </div>
